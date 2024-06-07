@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+    <title>Portfolio</title>
+    <style>
+        .skills {
+            margin: 20px 0;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 25px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 5px;
+            color: #fff;
+            line-height: 25px;
+            box-sizing: border-box;
+        }
+
+        .skill-html .progress {
+            width: 90%;
+            background-color: #f9532d;
+        }
+
+        .skill-css .progress {
+            width: 80%;
+            background-color: #2965f1;
+        }
+
+        .skill-js .progress {
+            width: 70%;
+            background-color: #f0db4f;
+        }
+
+        .skill-react .progress {
+            width: 65%;
+            background-color: #61dafb;
+        }
+
+        .skill-node .progress {
+            width: 75%;
+            background-color: #68a063;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="">Govii</a>
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="Home.html" class="active" style="--navAni:1">Home</a></li>
+                <li><a href="About.html" style="--navAni:2">About</a></li>
+                <li><a href="Skills.html" style="--navAni:3">Skills</a></li>
+                <li><a href="Projects.html" style="--navAni:4">Projects</a></li>
+                <li><a href="Certifications.html" style="--navAni:5">Certifications</a></li>
+                <li><a href="Contact.html" style="--navAni:6">Contact</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="main">
+            <div class="images">
+                <img src="gov.png" alt="" class="img-w">
+                <span class="bg-effect-1">
+                    <span class="bg-effect-1"></span>
+                </span>
+            </div>
+            <div class="detail">
+                <h3>My Skills are</h3>
+
+                <div class="skills">
+                    <div class="skill skill-html">
+                        <div class="skill-name">Web Development </div>
+                        <div class="progress-bar">
+                            <div class="progress">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill skill-css">
+                        <div class="skill-name">DBMS</div>
+                        <div class="progress-bar">
+                            <div class="progress">80%</div>
+                        </div>
+                    </div>
+                    <div class="skill skill-js">
+                        <div class="skill-name">C Programming </div>
+                        <div class="progress-bar">
+                            <div class="progress">70%</div>
+                        </div>
+                    </div>
+                    <div class="skill skill-react">
+                        <div class="skill-name">Linux</div>
+                        <div class="progress-bar">
+                            <div class="progress">65%</div>
+                        </div>
+                    </div>
+                    <div class="skill skill-node">
+                        <div class="skill-name">Python</div>
+                        <div class="progress-bar">
+                            <div class="progress">75%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+</body>
+
+</html>
